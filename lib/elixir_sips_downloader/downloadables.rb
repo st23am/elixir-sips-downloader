@@ -1,5 +1,5 @@
 # Namespace module for Downloadable assets.
-module RubyTapasDownloader::Downloadables
+module ElixirSipsDownloader::Downloadables
 end
 
 require_relative 'downloadable'

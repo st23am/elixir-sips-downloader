@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Login do
+describe ElixirSipsDownloader::Login do
   subject(:ruby_tapas_downloader) {
-    RubyTapasDownloader::Login.new agent, email, password
+    ElixirSipsDownloader::Login.new agent, email, password
   }
 
   let(:agent)    { double get: page }
@@ -19,7 +19,7 @@ describe RubyTapasDownloader::Login do
   describe '#login' do
     it 'requests the login page' do
       expect(agent).to receive(:get)
-                       .with(RubyTapasDownloader::Config.urls.fetch(:login))
+                       .with(ElixirSipsDownloader::Config.urls.fetch(:login))
       ruby_tapas_downloader.login
     end
 

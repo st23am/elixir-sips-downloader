@@ -1,27 +1,27 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Extractors::Episode do
+describe ElixirSipsDownloader::Extractors::Episode do
   subject(:episode_extractor) {
-    RubyTapasDownloader::Extractors::Episode.new files_extractor
+    ElixirSipsDownloader::Extractors::Episode.new files_extractor
   }
 
   let(:files_extractor) { double(extract: files) }
   let(:files) {
     Set[
-      RubyTapasDownloader::Downloadables::File.new(
+      ElixirSipsDownloader::Downloadables::File.new(
         'some-episode-file.html',
         'http://example.com/some-episode-file.html'),
-      RubyTapasDownloader::Downloadables::File.new(
+      ElixirSipsDownloader::Downloadables::File.new(
         'some-episode-file.mp4',
         'http://example.com/some-episode-file.mp4'),
-      RubyTapasDownloader::Downloadables::File.new(
+      ElixirSipsDownloader::Downloadables::File.new(
         'some-episode-file.rb',
         'http://example.com/some-episode-file.rb'),
     ]
   }
 
   it 'is an Extractor' do
-    expect(episode_extractor).to be_a RubyTapasDownloader::Extractor
+    expect(episode_extractor).to be_a ElixirSipsDownloader::Extractor
   end
 
   describe '#extract' do
@@ -39,7 +39,7 @@ describe RubyTapasDownloader::Extractors::Episode do
 
     it 'returns an Episode' do
       expect(episode).to eq(
-        RubyTapasDownloader::Downloadables::Episode.new(
+        ElixirSipsDownloader::Downloadables::Episode.new(
           '129 Some episode',
           'http://example.com/some-episode',
           files

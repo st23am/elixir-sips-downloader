@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Downloadables::Catalog do
+describe ElixirSipsDownloader::Downloadables::Catalog do
   subject(:catalog) {
-    RubyTapasDownloader::Downloadables::Catalog.new episodes
+    ElixirSipsDownloader::Downloadables::Catalog.new episodes
   }
 
   let(:episodes) { [double(download: true), double(download: true)] }
@@ -10,7 +10,7 @@ describe RubyTapasDownloader::Downloadables::Catalog do
   specify('#episodes') { expect(catalog.episodes).to eq(episodes) }
 
   it 'is downloadable' do
-    expect(catalog).to be_a RubyTapasDownloader::Downloadable
+    expect(catalog).to be_a ElixirSipsDownloader::Downloadable
   end
 
   describe '#download' do
@@ -37,14 +37,14 @@ describe RubyTapasDownloader::Downloadables::Catalog do
   describe '#==' do
     it 'compares episodes' do
       expect(catalog).to eq(
-                      RubyTapasDownloader::Downloadables::Catalog.new episodes)
+                      ElixirSipsDownloader::Downloadables::Catalog.new episodes)
     end
   end
 
   describe '#eql?' do
     it 'compares episodes' do
       expect(catalog.eql?(
-         RubyTapasDownloader::Downloadables::Catalog.new episodes)).to be_true
+         ElixirSipsDownloader::Downloadables::Catalog.new episodes)).to be_true
     end
   end
 

@@ -1,5 +1,5 @@
 # The contract for Extractors.
-class RubyTapasDownloader::Extractor
+class ElixirSipsDownloader::Extractor
   # Should be implemented by children.
   def extract
     fail NotImplementedError

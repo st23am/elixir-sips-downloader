@@ -1,5 +1,5 @@
 # Namespace module for Extractors.
-module RubyTapasDownloader::Extractors
+module ElixirSipsDownloader::Extractors
 end
 
 require_relative 'extractor'

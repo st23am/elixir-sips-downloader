@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Extractor do
+describe ElixirSipsDownloader::Extractor do
   subject(:extractor) { extractor_class.new }
 
-  let(:extractor_class) { Class.new RubyTapasDownloader::Extractor }
+  let(:extractor_class) { Class.new ElixirSipsDownloader::Extractor }
 
   describe 'contract' do
     specify('#extract') {

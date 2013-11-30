@@ -1,6 +1,6 @@
 # An Ruby Tapas Episode.
-class RubyTapasDownloader::Downloadables::Episode <
-                                              RubyTapasDownloader::Downloadable
+class ElixirSipsDownloader::Downloadables::Episode <
+                                              ElixirSipsDownloader::Downloadable
 
   # @return [String] the title of the Episode.
   attr_reader :title
@@ -8,7 +8,7 @@ class RubyTapasDownloader::Downloadables::Episode <
   # @return [String] the link to the Episode.
   attr_reader :link
 
-  # @return [Set<RubyTapasDownloader::Downloadables::File>] the Set of Files
+  # @return [Set<ElixirSipsDownloader::Downloadables::File>] the Set of Files
   #   for that episode.
   attr_reader :files
 
@@ -28,10 +28,10 @@ class RubyTapasDownloader::Downloadables::Episode <
 
   # Download the Episode.
   #
-  # @param (see: RubyTapasDownloader::Downloadables::Catalog#download)
+  # @param (see: ElixirSipsDownloader::Downloadables::Catalog#download)
   def download basepath, agent
     episode_path = File.join basepath, sanitized_title
-    RubyTapasDownloader.logger.info 'Starting download of episode ' \
+    ElixirSipsDownloader.logger.info 'Starting download of episode ' \
                                     "`#{ title }' in `#{ episode_path }'..."
     FileUtils.mkdir_p episode_path
     files.each { |file| file.download episode_path, agent }

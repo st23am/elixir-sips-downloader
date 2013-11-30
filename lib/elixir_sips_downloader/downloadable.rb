@@ -1,5 +1,5 @@
 # The contract for Downloadables.
-class RubyTapasDownloader::Downloadable
+class ElixirSipsDownloader::Downloadable
   # Should be implemented by children.
   def download
     fail NotImplementedError

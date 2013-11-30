@@ -1,25 +1,25 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Extractors::Catalog do
+describe ElixirSipsDownloader::Extractors::Catalog do
   subject(:catalog_extractor) {
-    RubyTapasDownloader::Extractors::Catalog.new episode_extractor
+    ElixirSipsDownloader::Extractors::Catalog.new episode_extractor
   }
 
   let(:episode_extractor) { double }
   let(:episodes) { Set[first_episode, second_episode] }
 
   let(:first_episode)  {
-    RubyTapasDownloader::Downloadables::Episode.new(
+    ElixirSipsDownloader::Downloadables::Episode.new(
       '129 Some episode',
       'http://example.com/some-episode',
       Set[
-        RubyTapasDownloader::Downloadables::File.new(
+        ElixirSipsDownloader::Downloadables::File.new(
           'some-episode-file.html',
           'http://example.com/some-episode-file.html'),
-        RubyTapasDownloader::Downloadables::File.new(
+        ElixirSipsDownloader::Downloadables::File.new(
           'some-episode-file.mp4',
           'http://example.com/some-episode-file.mp4'),
-        RubyTapasDownloader::Downloadables::File.new(
+        ElixirSipsDownloader::Downloadables::File.new(
           'some-episode-file.rb',
           'http://example.com/some-episode-file.rb'),
       ]
@@ -27,17 +27,17 @@ describe RubyTapasDownloader::Extractors::Catalog do
   }
 
   let(:second_episode)  {
-    RubyTapasDownloader::Downloadables::Episode.new(
+    ElixirSipsDownloader::Downloadables::Episode.new(
       '130 Some other episode',
       'http://example.com/some-other-episode',
       Set[
-        RubyTapasDownloader::Downloadables::File.new(
+        ElixirSipsDownloader::Downloadables::File.new(
           'some-other-episode-file.html',
           'http://example.com/some-other-episode-file.html'),
-        RubyTapasDownloader::Downloadables::File.new(
+        ElixirSipsDownloader::Downloadables::File.new(
           'some-other-episode-file.mp4',
           'http://example.com/some-other-episode-file.mp4'),
-        RubyTapasDownloader::Downloadables::File.new(
+        ElixirSipsDownloader::Downloadables::File.new(
           'some-other-episode-file.rb',
           'http://example.com/some-other-episode-file.rb'),
       ]
@@ -58,7 +58,7 @@ describe RubyTapasDownloader::Extractors::Catalog do
 
 
   it 'is an Extractor' do
-    expect(catalog_extractor).to be_a RubyTapasDownloader::Extractor
+    expect(catalog_extractor).to be_a ElixirSipsDownloader::Extractor
   end
 
   describe '#extract' do
@@ -74,7 +74,7 @@ describe RubyTapasDownloader::Extractors::Catalog do
 
     it 'returns a Catalog' do
       expect(catalog).to eq(
-        RubyTapasDownloader::Downloadables::Catalog.new episodes
+        ElixirSipsDownloader::Downloadables::Catalog.new episodes
       )
     end
   end

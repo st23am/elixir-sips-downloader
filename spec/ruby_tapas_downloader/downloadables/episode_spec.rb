@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Downloadables::Episode do
+describe ElixirSipsDownloader::Downloadables::Episode do
   subject(:episode) {
-    RubyTapasDownloader::Downloadables::Episode.new title, link, files
+    ElixirSipsDownloader::Downloadables::Episode.new title, link, files
   }
 
   let(:title)           { '999 Some: Ruby Tapas Episode with <<' }
@@ -18,7 +18,7 @@ describe RubyTapasDownloader::Downloadables::Episode do
   end
 
   it 'is downloadable' do
-    expect(episode).to be_a RubyTapasDownloader::Downloadable
+    expect(episode).to be_a ElixirSipsDownloader::Downloadable
   end
 
   describe '#download' do
@@ -46,7 +46,7 @@ describe RubyTapasDownloader::Downloadables::Episode do
   describe '#==' do
     it 'compares title, link and files' do
       expect(episode).to eq(
-           RubyTapasDownloader::Downloadables::Episode.new title, link, files)
+           ElixirSipsDownloader::Downloadables::Episode.new title, link, files)
     end
   end
 
@@ -54,7 +54,7 @@ describe RubyTapasDownloader::Downloadables::Episode do
     it 'compares title, link and files' do
       expect(
         episode.eql?(
-          RubyTapasDownloader::Downloadables::Episode.new title, link, files)
+          ElixirSipsDownloader::Downloadables::Episode.new title, link, files)
       ).to be_true
     end
   end

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe RubyTapasDownloader::Downloadable do
+describe ElixirSipsDownloader::Downloadable do
   subject(:downloadable) { downloadable_class.new }
 
-  let(:downloadable_class) { Class.new RubyTapasDownloader::Downloadable }
+  let(:downloadable_class) { Class.new ElixirSipsDownloader::Downloadable }
 
   describe 'contract' do
     specify('#download') {

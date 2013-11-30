@@ -1,5 +1,5 @@
 # Fetches feed from Ruby Tapas.
-class RubyTapasDownloader::FeedFetcher
+class ElixirSipsDownloader::FeedFetcher
   # @return [Mechanize] the Mechanize agent.
   attr_reader :agent
 
@@ -19,9 +19,9 @@ class RubyTapasDownloader::FeedFetcher
   #
   # @return [RSS::Rss] the feed for Ruby Tapas.
   def fetch
-    RubyTapasDownloader.logger.info 'Fetching episodes feed...'
+    ElixirSipsDownloader.logger.info 'Fetching episodes feed...'
 
-    feed_url = RubyTapasDownloader::Config.urls[:feed]
+    feed_url = ElixirSipsDownloader::Config.urls[:feed]
 
     agent.add_auth feed_url, email, password
     RSS::Parser.parse agent.get(feed_url).body

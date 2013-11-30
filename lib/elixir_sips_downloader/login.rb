@@ -1,7 +1,7 @@
 # Perform Login in Ruby Tapas.
 #
 # Login must be performed before any attempt to download files.
-class RubyTapasDownloader::Login
+class ElixirSipsDownloader::Login
   # @return [Mechanize] the Mechanize agent.
   attr_reader :agent
 
@@ -19,7 +19,7 @@ class RubyTapasDownloader::Login
 
   # Perform login.
   def login
-    RubyTapasDownloader.logger.info 'Logging in...'
+    ElixirSipsDownloader.logger.info 'Logging in...'
     request_login_page
     fill_login_form
     submit_login_form
@@ -28,7 +28,7 @@ class RubyTapasDownloader::Login
   private
 
   def request_login_page
-    @page = agent.get RubyTapasDownloader::Config.urls.fetch(:login)
+    @page = agent.get ElixirSipsDownloader::Config.urls.fetch(:login)
   end
 
   def fill_login_form

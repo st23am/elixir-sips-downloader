@@ -1,5 +1,5 @@
 # Retrieve configurations.
-class RubyTapasDownloader::Config
+class ElixirSipsDownloader::Config
   # Retrieve urls stored in `urls.yml`.
   # @return [Hash] the urls stored in `urls.yml`.
   def self.urls
