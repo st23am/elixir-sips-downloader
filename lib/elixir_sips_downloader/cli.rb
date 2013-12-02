@@ -1,4 +1,4 @@
-require_relative '../ruby-tapas-downloader'
+require_relative '../elixir-sips-downloader'
 
 # The Command Line Interface for Ruby Tapas Downloader.
 class ElixirSipsDownloader::CLI
