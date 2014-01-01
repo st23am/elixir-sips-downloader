@@ -1,4 +1,4 @@
-require_relative '../lib/ruby-tapas-downloader'
+require_relative '../lib/elixir-sips-downloader'
 
 ElixirSipsDownloader.logger = Object.new.tap do |logger|
   def logger.method_missing(*)
