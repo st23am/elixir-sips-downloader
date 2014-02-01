@@ -34,7 +34,9 @@ class ElixirSipsDownloader::Downloadables::Episode <
     ElixirSipsDownloader.logger.info 'Starting download of episode ' \
                                     "`#{ title }' in `#{ episode_path }'..."
     FileUtils.mkdir_p episode_path
-    files.each { |file| file.download episode_path, agent }
+    files.each { |file| 
+      file.download(episode_path, agent)
+    }
   end
 
   def == other

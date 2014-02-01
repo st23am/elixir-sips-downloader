@@ -1,3 +1,5 @@
+require 'mechanize/progressbar'
+
 # The File resource of an Episode.
 class ElixirSipsDownloader::Downloadables::File <
                                               ElixirSipsDownloader::Downloadable
@@ -22,7 +24,11 @@ class ElixirSipsDownloader::Downloadables::File <
     file_path = File.join(basepath, name)
     ElixirSipsDownloader.logger.info "Starting download of file `#{ name }' " \
                                     "in `#{ file_path }'..."
-    agent.download link, file_path unless File.exists? file_path
+    unless File.exists? file_path 
+    agent.progressbar { 
+      agent.download(link, file_path)
+    }
+    end
   end
 
   def == other
