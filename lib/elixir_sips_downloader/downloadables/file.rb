@@ -26,7 +26,7 @@ class ElixirSipsDownloader::Downloadables::File <
                                     "in `#{ file_path }'..."
     unless File.exists? file_path 
     agent.progressbar { 
-      agent.download(link, file_path)
+      agent.download link, file_path
     }
     end
   end
